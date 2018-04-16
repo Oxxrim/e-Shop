@@ -12,41 +12,29 @@ import org.springframework.stereotype.Service;
 public class AccountServiceImpl implements AccountService {
 
 	@Autowired
-	private AccountDAO accountDAO;
+	 private AccountDAO accountDAO;
 
-	@Override
-	public Account save(Account account) {
-		if (accountDAO.getOne(account.getLogin()) != null) {
-			return accountDAO.save(account);
-		}
-		return null;
-	}
+	 public Account save(Account account) {
+	  if (accountDAO.getOne(account.getLogin()) != null) {
+	   return accountDAO.save(account);
+	  }
+	  return null;
+	 }
 
-	@Override
-	public Account update(Account account) {
-		if (accountDAO.getOne(account.getLogin()) != null) {
-			return accountDAO.save(account);
-		}
-		return null;
-	}
+	 public Account update(Account account) {
+	  if (accountDAO.getOne(account.getLogin()) != null) {
+	   return accountDAO.save(account);
+	  }
+	  return null;
+	 }
 
-	@Override
-	public Account get(String login) {
-		return accountDAO.getOne(login);
-	}
+	 public Account get(String login) {
+	  return accountDAO.getOne(login);
+	 }
 
-	@Override
-	public void delete(String login) {
-		Account account = accountDAO.getOne(login);
-		if (account != null) {
-			accountDAO.delete(account);
-		}
+	 public void delete(Account account) {
+	  accountDAO.delete(account);
+	 }
 
-	}
-
-	@Override
-	public List<Account> findAllByAccount() {
-		return accountDAO.findAllByAccount();
-	}
 
 }

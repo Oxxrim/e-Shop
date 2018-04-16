@@ -34,22 +34,16 @@ public class CartServiceImpl implements CartService{
 		return cartDao.getOne(id);
 	}
 
-	public void delete(Integer id) {
-		Cart cart = cartDao.getOne(id);
-		if(cart != null) {
-			cartDao.delete(id);
-		}
+	public void delete(Cart cart) {
 		
+			cartDao.delete(cart);		
 	}
 
-	public List<Cart> findAllByCart() {
-		
-		return cartDao.findAllByCart();
-	}
+	
 
-	public List<Cart> findAllByCreationTime(Long startPeriod, Long endPeriod) {
+	public List<Cart> findAllByCreationTime(Long startPeriod, Long endPeriod, String login) {
 		// TODO Auto-generated method stub
-		return null;
+		return cartDao.findAllByCreationTime(startPeriod, endPeriod, login);
 	}
 
 }

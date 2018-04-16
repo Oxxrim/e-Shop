@@ -13,9 +13,7 @@ public interface CartService {
 	
 	Cart get(Integer id);
 	
-	void delete(Integer id);
+	void delete(Cart cart);
 	
-	List<Cart> findAllByCart();
-	
-	List<Cart> findAllByCreationTime(Long startPeriod, Long endPeriod);
+	List<Cart> findAllByCreationTime(Long startPeriod, Long endPeriod, String login);
 }

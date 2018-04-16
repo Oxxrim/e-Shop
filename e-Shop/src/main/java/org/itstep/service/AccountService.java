@@ -12,7 +12,6 @@ public interface AccountService {
 
 	Account get(String login);
 
-	void delete(String login);
+	void delete(Account account);
 
-	List<Account> findAllByAccount();
 }
